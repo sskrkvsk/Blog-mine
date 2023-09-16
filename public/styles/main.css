@@ -33,9 +33,17 @@ a:focus {
 }
 
 .container {
-    width: 100%;
+    width: 50%;
+    height: 60vh;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 5%;
+    border:#000 solid ;
+}
+
+.blog {
+    text-align: center;
+    padding: 20px;
 }
 
 @media (max-width: 768px) {

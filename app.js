@@ -12,28 +12,28 @@ app.use(express.static("public"));
 
 
 // mongoose set up
-// mongoose.connect('mongodb+srv://admin-ssk:e47W66@cluster0.lmjygxq.mongodb.net/DoToDB');
+mongoose.connect('mongodb+srv://admin-ssk:e47W66@cluster0.lmjygxq.mongodb.net/DoToDB');
 
-// const blogSchema = new mongoose.Schema({
-//     header: {
-//         type: String,
-//         required: [true]
-//     },
-//     date: {
-//         type: Date,
-//         default: Date.now
-//     },
-//     paragraph: {
-//         type: String,
-//         required: [true]
-//     },
-//     author: {
-//         type: String,
-//         required: [true]
-//     }
+const blogSchema = new mongoose.Schema({
+    header: {
+        type: String,
+        required: [true]
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    paragraph: {
+        type: String,
+        required: [true]
+    },
+    author: {
+        type: String,
+        required: [true]
+    }
 
-// });
-// const Blog = mongoose.model("Blog", blogSchema);
+});
+const Blog = mongoose.model("Blog", blogSchema);
 
 
 //Default items
@@ -51,16 +51,34 @@ const defaultBlog2 = {
     author: "John Doe",
 };
 
-app.get("/", function(req, res) {
+const defaultBlogs = [defaultBlog, defaultBlog2];
 
-        res.render("index");
+defaultBlog
+
+app.get("/", function(req, res) {
+    Blog.find({}).then(function(foundBlogs){
+
+        if (foundBlogs.length < 1) {
+          Blog.insertMany(defaultBlogs).then(function (err) {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log("Successefully saved default items to DB");
+            }
+          });
+        } else {
+          res.render("index", { newBlogs: foundBlogs });
+        }
+      })
+      .catch(function(err){
+        console.log(err);
+      });
 
   });
 
-
-
-const defaultBlogs = [defaultBlog, defaultBlog2];
-
+  app.get("/post", function (req, res) {
+    res.render("partials/post");
+  })
 
 app.listen(3000, function() {
     console.log("Server started on port 3000");
