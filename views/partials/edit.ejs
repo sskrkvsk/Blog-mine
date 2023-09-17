@@ -10,7 +10,7 @@
   <body>
     <main class="container">
       <h1 class="post-h">Edit Post</h1>
-      <form action="/check" method="post">
+      <form action="/load" method="post">
         <h3 class="input-header">Edit your header</h3>
         <input
           type="text"
@@ -37,7 +37,7 @@
           value="<%= editPost.author %>"
           required
         />
-
+        <input type="hidden" name="id" value="<%= editPost.id %>" />
         <input type="submit" name="submit-btn" class="sub-btn" value="Edit" />
       </form>
     </main>

@@ -38,10 +38,8 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: [true]
     }
-
 });
 const Blog = mongoose.model("Blog", blogSchema);
-
 
 //Default items
 const defaultBlog = {
@@ -81,15 +79,12 @@ app.get("/", function(req, res) {
 
   });
 
-
   // POST
 app.post("/", async function(req, res){
   
   const postHeader = req.body.inputHeader;
   const postParagraph = req.body.inputParagraph;
   const postAuthor = req.body.inputAuthor;
-
-  console.log(postHeader + "..." + postParagraph + "..." + postAuthor);
 
   try {
     const post = new Blog({
@@ -106,11 +101,7 @@ app.post("/", async function(req, res){
   }
 });
 
-
-
-
 //EDIT
-
 app.post("/edit", async function(req, res){
   
   const postID = req.body.edit;
@@ -119,12 +110,27 @@ app.post("/edit", async function(req, res){
 
 });
 
+app.post("/load", async function(req, res){
 
-// app.post("/",)
+  const postToEdit = req.body.id;
+  const postHeader = req.body.inputHeader;
+  const postParagraph = req.body.inputParagraph;
+  const postAuthor = req.body.inputAuthor;
 
-
-
-
+  try {
+    await Blog.updateOne(
+      {_id: postToEdit},
+      { $set: { 
+        header: postHeader,
+        paragraph: postParagraph,
+        author: postAuthor
+      } });
+      res.redirect("/");
+    console.log("Document updated");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 //DELETE
 app.post("/delete", async function (req, res) {
@@ -137,10 +143,6 @@ app.post("/delete", async function (req, res) {
     console.error(`Error deleting document: ${error}`);
   }
 });
-
-
-
-
 
   app.get("/post", function (req, res) {
     res.render("partials/post");
