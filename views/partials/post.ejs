@@ -8,11 +8,25 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <section class="active about">
-      <div class="pees">
-        <p>I made it almost by myself. ChatGPT was used mostly as a mentor.</p>
-        <p>Im not a copycat. This is hard work.</p>
-      </div>
-    </section>
+    <main class="container">
+      <h1 class="post-h">New Post</h1>
+      <form action="/" method="post">
+        <h3 class="input-header">Write your header</h3>
+        <input type="text" class="input-header" name="inputHeader" required />
+
+        <h3 class="input-paragraph">Write your post</h3>
+        <input
+          type="text"
+          class="input-paragraph"
+          name="inputParagraph"
+          required
+        />
+
+        <label for="input-author">Write your name</label>
+        <input type="text" class="input-author" name="inputAuthor" required />
+
+        <input type="submit" name="submit-btn" class="sub-btn" value="Post" />
+      </form>
+    </main>
   </body>
 </html>

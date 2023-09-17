@@ -2,7 +2,9 @@
 
 <main class="container">
   <h1>My blog</h1>
-  <button class="new-post">new post</button>
+  <button class="new-post" onclick="window.location.href='/post'">
+    new post
+  </button>
 
   <% newBlogs.forEach(function(blog){ %>
 
@@ -12,9 +14,15 @@
     <article class="blog-text"><%= blog.paragraph %></article>
     <p class="author"><%= blog.author %></p>
     <div class="btn-container">
-      <button class="edit" onclick="window.location.href='/post'">edit</button>
+      <form action="/edit" method="post">
+        <input type="hidden" name="edit" value="<%= blog.id %>" />
+        <button class="edit" type="submit">Edit</button>
+      </form>
 
-      <button class="delete">delete</button>
+      <form action="/delete" method="post">
+        <input type="hidden" name="delete" value="<%= blog.id %>" />
+        <button type="submit" class="delete">delete</button>
+      </form>
     </div>
   </section>
   <% }); %>

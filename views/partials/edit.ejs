@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOTO</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="post-h">Edit Post</h1>
+      <form action="/check" method="post">
+        <h3 class="input-header">Edit your header</h3>
+        <input
+          type="text"
+          class="input-header"
+          name="inputHeader"
+          value="<%= editPost.header %>"
+          required
+        />
+
+        <h3 class="input-paragraph">Change your post</h3>
+        <input
+          type="text"
+          class="input-paragraph"
+          name="inputParagraph"
+          value="<%= editPost.paragraph %>"
+          required
+        />
+
+        <label for="input-author">Change your name</label>
+        <input
+          type="text"
+          class="input-author"
+          name="inputAuthor"
+          value="<%= editPost.author %>"
+          required
+        />
+
+        <input type="submit" name="submit-btn" class="sub-btn" value="Edit" />
+      </form>
+    </main>
+  </body>
+</html>
