@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <main class="container">
+    <main class="post-container">
       <h1 class="post-h">New Post</h1>
       <form action="/" method="post">
-        <h3 class="input-header">Write your header</h3>
+        <h3 class="input-h3">Write your header</h3>
         <input type="text" class="input-header" name="inputHeader" required />
 
-        <h3 class="input-paragraph">Write your post</h3>
-        <input
-          type="text"
+        <h3 class="input-h3">Write your post</h3>
+        <textarea
           class="input-paragraph"
           name="inputParagraph"
+          rows="6"
           required
-        />
+        ></textarea>
 
-        <label for="input-author">Write your name</label>
+        <h3 class="input-h3">Write your name</h3>
         <input type="text" class="input-author" name="inputAuthor" required />
 
         <input type="submit" name="submit-btn" class="sub-btn" value="Post" />

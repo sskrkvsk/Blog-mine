@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <main class="container">
+    <main class="edit-container">
       <h1 class="post-h">Edit Post</h1>
       <form action="/load" method="post">
-        <h3 class="input-header">Edit your header</h3>
+        <h3 class="input-h3">Edit your header</h3>
         <input
           type="text"
           class="input-header"
@@ -20,16 +20,16 @@
           required
         />
 
-        <h3 class="input-paragraph">Change your post</h3>
-        <input
-          type="text"
+        <h3 class="input-h3">Change your post</h3>
+        <textarea
           class="input-paragraph"
           name="inputParagraph"
+          rows="6"
           value="<%= editPost.paragraph %>"
           required
-        />
+        ></textarea>
 
-        <label for="input-author">Change your name</label>
+        <h3 for="input-h3">Change your name</h3>
         <input
           type="text"
           class="input-author"

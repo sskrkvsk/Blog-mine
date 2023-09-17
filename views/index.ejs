@@ -14,14 +14,14 @@
     <article class="blog-text"><%= blog.paragraph %></article>
     <p class="author"><%= blog.author %></p>
     <div class="btn-container">
-      <form action="/edit" method="post">
+      <form action="/edit" method="post" class="container-form">
         <input type="hidden" name="edit" value="<%= blog.id %>" />
         <button class="edit" type="submit">Edit</button>
       </form>
 
-      <form action="/delete" method="post">
+      <form action="/delete" method="post" class="container-form">
         <input type="hidden" name="delete" value="<%= blog.id %>" />
-        <button type="submit" class="delete">delete</button>
+        <button type="submit" class="delete">Delete</button>
       </form>
     </div>
   </section>

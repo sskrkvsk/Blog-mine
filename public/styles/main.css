@@ -1,51 +1,142 @@
-* {
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #ff6600;
-}
-
+/* Common Styles */
 body {
-    font-family: 'Arial', sans-serif;
-
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-}
-
-h1, h2, h3, p, ul, ol {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
-    list-style: none;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-a:hover,
-a:focus {
-    text-decoration: underline;
-}
-
-.container {
-    width: 50%;
-    height: 60vh;
-    max-width: 1200px;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 800px;
     margin: 0 auto;
-    margin-top: 5%;
-    border:#000 solid ;
-}
-
-.blog {
-    text-align: center;
     padding: 20px;
-}
+    background-color: #fff;
+  }
+  
+  .post-h {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Main Page Styles */
+  .blog {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-h {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  .date {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .blog-text {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #444;
+  }
+  
+  .author {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #334e69;
+  }
+  
+  .btn-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container-form {
+    display: inline-block;
+  }
+  
+  .edit,
+  .delete {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded borders */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .new-post {
+    background-color: #4caf50; /* Green */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded borders */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect */
+  .edit:hover,
+  .delete:hover,
+  .new-post:hover {
+    background-color: #0056b3; /* Darker blue */
+  }
+  
+  /* Post Adding Page Styles */
+  .post-container {
+    max-width: 800px; /* Increased max width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input-header,
+  .input-paragraph,
+  .input-author {
+    font-size: 1rem;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Rounded borders */
+  }
 
-@media (max-width: 768px) {
-    /* Styles for smaller screens */
-}
+  
+  .sub-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 15px; /* Rounded borders */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect */
+  .sub-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+  }
+  
+  /* Post Editing Page Styles */
+  .edit-container {
+    max-width: 800px; /* Increased max width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Add any additional styles as needed */
+  
+  

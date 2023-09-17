@@ -58,6 +58,7 @@ const defaultBlog2 = {
 
 const defaultBlogs = [defaultBlog, defaultBlog2];
 
+//GET
 app.get("/", function(req, res) {
     Blog.find({}).then(function(foundBlogs){
 
@@ -80,6 +81,7 @@ app.get("/", function(req, res) {
   });
 
   // POST
+
 app.post("/", async function(req, res){
   
   const postHeader = req.body.inputHeader;
@@ -99,6 +101,10 @@ app.post("/", async function(req, res){
   } catch (error) {
     console.log(error);
   }
+});
+
+app.get("/post", function (req, res) {
+  res.render("partials/post");
 });
 
 //EDIT
@@ -144,14 +150,14 @@ app.post("/delete", async function (req, res) {
   }
 });
 
-  app.get("/post", function (req, res) {
-    res.render("partials/post");
-  })
 
-  app.get("/edit", function (req, res) {
-    res.render("partials/edit");
-  })
+  //404
+app.get("*", function (req, res) {
+    res.status(404).render("partials/404"); // Assuming you have a "404.ejs" view
+  });
 
 app.listen(3000, function() {
     console.log("Server started on port 3000");
   });
+
+
