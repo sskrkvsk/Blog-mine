@@ -25,9 +25,11 @@
           class="input-paragraph"
           name="inputParagraph"
           rows="6"
-          value="<%= editPost.paragraph %>"
+          value=""
           required
-        ></textarea>
+        >
+<%= editPost.paragraph %></textarea
+        >
 
         <h3 for="input-h3">Change your name</h3>
         <input
@@ -38,7 +40,12 @@
           required
         />
         <input type="hidden" name="id" value="<%= editPost.id %>" />
-        <input type="submit" name="submit-btn" class="sub-btn" value="Edit" />
+        <div class="btn-container">
+          <input type="submit" name="submit-btn" class="sub-btn" value="Edit" />
+          <button class="new-post" onclick="window.location.href='/'">
+            Back
+          </button>
+        </div>
       </form>
     </main>
   </body>

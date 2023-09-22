@@ -161,3 +161,11 @@ app.listen(3000, function() {
   });
 
 
+//SINGLE POST
+app.post("/:id", async function (req, res) {
+
+  const id = req.body.edit;
+  const currentPost = await Blog.findById(id);
+  
+  res.render("partials/single", {editPost: currentPost});
+});

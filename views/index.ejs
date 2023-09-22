@@ -9,7 +9,11 @@
   <% newBlogs.forEach(function(blog){ %>
 
   <section class="blog">
-    <h2 class="blog-h"><%= blog.header %></h2>
+    <form action="/<%= blog.id %>" method="post">
+      <input type="hidden" name="edit" value="<%= blog.id %>" />
+      <button type="submit" class="blog-h"><%= blog.header %></button>
+    </form>
+
     <p class="date"><%= blog.date %></p>
     <article class="blog-text"><%= blog.paragraph %></article>
     <p class="author"><%= blog.author %></p>
