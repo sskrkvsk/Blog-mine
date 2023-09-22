@@ -153,7 +153,7 @@ app.post("/delete", async function (req, res) {
 
   //404
 app.get("*", function (req, res) {
-    res.status(404).render("partials/404"); // Assuming you have a "404.ejs" view
+    res.status(404).render("partials/404");
   });
 
 app.listen(3000, function() {
